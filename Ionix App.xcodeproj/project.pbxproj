@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2926BA293100AD8231 /* AppDelegate.swift */; };
-		3B95BE2C26BA293100AD8231 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */; };
 		3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2D26BA293100AD8231 /* ViewController.swift */; };
 		3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE2F26BA293100AD8231 /* Main.storyboard */; };
 		3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE3226BA293100AD8231 /* Ionix_App.xcdatamodeld */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		3B95BE2626BA293100AD8231 /* Ionix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ionix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B95BE2926BA293100AD8231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3B95BE2D26BA293100AD8231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B95BE3026BA293100AD8231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B95BE3326BA293100AD8231 /* Ionix_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ionix_App.xcdatamodel; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				3B95BE2926BA293100AD8231 /* AppDelegate.swift */,
-				3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */,
 				3B95BE2D26BA293100AD8231 /* ViewController.swift */,
 				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
 				3B95BE3526BA293400AD8231 /* Assets.xcassets */,
@@ -264,7 +261,6 @@
 				3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */,
 				3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */,
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
-				3B95BE2C26BA293100AD8231 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
