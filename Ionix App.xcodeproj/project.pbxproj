@@ -18,6 +18,9 @@
 		3B95BE7026BAF28200AD8231 /* StepViewCarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE6F26BAF28200AD8231 /* StepViewCarouselVC.swift */; };
 		3B95BE7426BAF42700AD8231 /* PermissionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE7326BAF42700AD8231 /* PermissionEntity.swift */; };
 		3B95BE7726BAF4C200AD8231 /* GeneralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */; };
+		3B95BE7C26BB2C0F00AD8231 /* ItemContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE7A26BB2C0F00AD8231 /* ItemContentCell.swift */; };
+		3B95BE7D26BB2C0F00AD8231 /* ItemContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE7B26BB2C0F00AD8231 /* ItemContentCell.xib */; };
+		3B95BE8126BB323D00AD8231 /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		3B95BE6F26BAF28200AD8231 /* StepViewCarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewCarouselVC.swift; sourceTree = "<group>"; };
 		3B95BE7326BAF42700AD8231 /* PermissionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionEntity.swift; sourceTree = "<group>"; };
 		3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTypes.swift; sourceTree = "<group>"; };
+		3B95BE7A26BB2C0F00AD8231 /* ItemContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemContentCell.swift; sourceTree = "<group>"; };
+		3B95BE7B26BB2C0F00AD8231 /* ItemContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemContentCell.xib; sourceTree = "<group>"; };
+		3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 		3B95BE5F26BA512600AD8231 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BE7826BB2BAD00AD8231 /* ItemCollection */,
 				3B95BE6626BA526C00AD8231 /* Carousel */,
 			);
 			path = Presenter;
@@ -171,6 +178,7 @@
 		3B95BE6026BA512B00AD8231 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BE7F26BB321D00AD8231 /* Extensions */,
 				3B95BE7526BAF4AC00AD8231 /* CommonClasses */,
 			);
 			path = Interactor;
@@ -179,6 +187,7 @@
 		3B95BE6126BA513100AD8231 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BE7E26BB2C1F00AD8231 /* ItemCollectoinView */,
 				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
 			);
 			path = View;
@@ -215,6 +224,38 @@
 				3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		3B95BE7826BB2BAD00AD8231 /* ItemCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7926BB2BD000AD8231 /* ItemContent */,
+			);
+			path = ItemCollection;
+			sourceTree = "<group>";
+		};
+		3B95BE7926BB2BD000AD8231 /* ItemContent */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7A26BB2C0F00AD8231 /* ItemContentCell.swift */,
+			);
+			path = ItemContent;
+			sourceTree = "<group>";
+		};
+		3B95BE7E26BB2C1F00AD8231 /* ItemCollectoinView */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7B26BB2C0F00AD8231 /* ItemContentCell.xib */,
+			);
+			path = ItemCollectoinView;
+			sourceTree = "<group>";
+		};
+		3B95BE7F26BB321D00AD8231 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +363,7 @@
 			files = (
 				3B95BE3926BA293400AD8231 /* LaunchScreen.storyboard in Resources */,
 				3B95BE3626BA293400AD8231 /* Assets.xcassets in Resources */,
+				3B95BE7D26BB2C0F00AD8231 /* ItemContentCell.xib in Resources */,
 				3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +391,9 @@
 			files = (
 				3B95BE7426BAF42700AD8231 /* PermissionEntity.swift in Sources */,
 				3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */,
+				3B95BE7C26BB2C0F00AD8231 /* ItemContentCell.swift in Sources */,
 				3B95BE7026BAF28200AD8231 /* StepViewCarouselVC.swift in Sources */,
+				3B95BE8126BB323D00AD8231 /* UICollectionViewCellExtensions.swift in Sources */,
 				3B95BE7726BAF4C200AD8231 /* GeneralTypes.swift in Sources */,
 				3B95BE6326BA518400AD8231 /* CarouselVC.swift in Sources */,
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
