@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2926BA293100AD8231 /* AppDelegate.swift */; };
-		3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2D26BA293100AD8231 /* ViewController.swift */; };
 		3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE2F26BA293100AD8231 /* Main.storyboard */; };
 		3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE3226BA293100AD8231 /* Ionix_App.xcdatamodeld */; };
 		3B95BE3626BA293400AD8231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE3526BA293400AD8231 /* Assets.xcassets */; };
 		3B95BE3926BA293400AD8231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE3726BA293400AD8231 /* LaunchScreen.storyboard */; };
 		3B95BE4426BA293400AD8231 /* Ionix_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE4326BA293400AD8231 /* Ionix_AppTests.swift */; };
 		3B95BE4F26BA293400AD8231 /* Ionix_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE4E26BA293400AD8231 /* Ionix_AppUITests.swift */; };
+		3B95BE6326BA518400AD8231 /* CarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE6226BA518400AD8231 /* CarouselVC.swift */; };
+		3B95BE7026BAF28200AD8231 /* StepViewCarouselVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE6F26BAF28200AD8231 /* StepViewCarouselVC.swift */; };
+		3B95BE7426BAF42700AD8231 /* PermissionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE7326BAF42700AD8231 /* PermissionEntity.swift */; };
+		3B95BE7726BAF4C200AD8231 /* GeneralTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		3B95BE2626BA293100AD8231 /* Ionix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ionix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B95BE2926BA293100AD8231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B95BE2D26BA293100AD8231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B95BE3026BA293100AD8231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B95BE3326BA293100AD8231 /* Ionix_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ionix_App.xcdatamodel; sourceTree = "<group>"; };
 		3B95BE3526BA293400AD8231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		3B95BE4A26BA293400AD8231 /* Ionix AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ionix AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B95BE4E26BA293400AD8231 /* Ionix_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ionix_AppUITests.swift; sourceTree = "<group>"; };
 		3B95BE5026BA293400AD8231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B95BE6226BA518400AD8231 /* CarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarouselVC.swift; path = "Ionix App/VIPER/Presenter/Carousel/CarouselVC.swift"; sourceTree = SOURCE_ROOT; };
+		3B95BE6F26BAF28200AD8231 /* StepViewCarouselVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewCarouselVC.swift; sourceTree = "<group>"; };
+		3B95BE7326BAF42700AD8231 /* PermissionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionEntity.swift; sourceTree = "<group>"; };
+		3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,8 @@
 		3B95BE2826BA293100AD8231 /* Ionix App */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BE5C26BA511400AD8231 /* VIPER */,
 				3B95BE2926BA293100AD8231 /* AppDelegate.swift */,
-				3B95BE2D26BA293100AD8231 /* ViewController.swift */,
-				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
 				3B95BE3526BA293400AD8231 /* Assets.xcassets */,
 				3B95BE3726BA293400AD8231 /* LaunchScreen.storyboard */,
 				3B95BE3A26BA293400AD8231 /* Info.plist */,
@@ -126,6 +131,90 @@
 				3B95BE5026BA293400AD8231 /* Info.plist */,
 			);
 			path = "Ionix AppUITests";
+			sourceTree = "<group>";
+		};
+		3B95BE5C26BA511400AD8231 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE6126BA513100AD8231 /* View */,
+				3B95BE6026BA512B00AD8231 /* Interactor */,
+				3B95BE5F26BA512600AD8231 /* Presenter */,
+				3B95BE5E26BA512100AD8231 /* Entity */,
+				3B95BE5D26BA511A00AD8231 /* Router */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		3B95BE5D26BA511A00AD8231 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B95BE5E26BA512100AD8231 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7126BAF40D00AD8231 /* StaticEntities */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3B95BE5F26BA512600AD8231 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE6626BA526C00AD8231 /* Carousel */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3B95BE6026BA512B00AD8231 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7526BAF4AC00AD8231 /* CommonClasses */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3B95BE6126BA513100AD8231 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B95BE6626BA526C00AD8231 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE6226BA518400AD8231 /* CarouselVC.swift */,
+				3B95BE6F26BAF28200AD8231 /* StepViewCarouselVC.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		3B95BE7126BAF40D00AD8231 /* StaticEntities */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7226BAF41500AD8231 /* Permissions */,
+			);
+			path = StaticEntities;
+			sourceTree = "<group>";
+		};
+		3B95BE7226BAF41500AD8231 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7326BAF42700AD8231 /* PermissionEntity.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		3B95BE7526BAF4AC00AD8231 /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE7626BAF4C200AD8231 /* GeneralTypes.swift */,
+			);
+			path = CommonClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +347,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */,
+				3B95BE7426BAF42700AD8231 /* PermissionEntity.swift in Sources */,
 				3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */,
+				3B95BE7026BAF28200AD8231 /* StepViewCarouselVC.swift in Sources */,
+				3B95BE7726BAF4C200AD8231 /* GeneralTypes.swift in Sources */,
+				3B95BE6326BA518400AD8231 /* CarouselVC.swift in Sources */,
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
