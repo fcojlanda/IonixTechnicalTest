@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2926BA293100AD8231 /* AppDelegate.swift */; };
+		3B95BE2C26BA293100AD8231 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */; };
+		3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE2D26BA293100AD8231 /* ViewController.swift */; };
+		3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE2F26BA293100AD8231 /* Main.storyboard */; };
+		3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE3226BA293100AD8231 /* Ionix_App.xcdatamodeld */; };
+		3B95BE3626BA293400AD8231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE3526BA293400AD8231 /* Assets.xcassets */; };
+		3B95BE3926BA293400AD8231 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BE3726BA293400AD8231 /* LaunchScreen.storyboard */; };
+		3B95BE4426BA293400AD8231 /* Ionix_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE4326BA293400AD8231 /* Ionix_AppTests.swift */; };
+		3B95BE4F26BA293400AD8231 /* Ionix_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE4E26BA293400AD8231 /* Ionix_AppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B95BE4026BA293400AD8231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B95BE1E26BA293100AD8231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B95BE2526BA293100AD8231;
+			remoteInfo = "Ionix App";
+		};
+		3B95BE4B26BA293400AD8231 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B95BE1E26BA293100AD8231 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B95BE2526BA293100AD8231;
+			remoteInfo = "Ionix App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B95BE2626BA293100AD8231 /* Ionix App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ionix App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B95BE2926BA293100AD8231 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3B95BE2D26BA293100AD8231 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B95BE3026BA293100AD8231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B95BE3326BA293100AD8231 /* Ionix_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ionix_App.xcdatamodel; sourceTree = "<group>"; };
+		3B95BE3526BA293400AD8231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B95BE3826BA293400AD8231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B95BE3A26BA293400AD8231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B95BE3F26BA293400AD8231 /* Ionix AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ionix AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B95BE4326BA293400AD8231 /* Ionix_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ionix_AppTests.swift; sourceTree = "<group>"; };
+		3B95BE4526BA293400AD8231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B95BE4A26BA293400AD8231 /* Ionix AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ionix AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B95BE4E26BA293400AD8231 /* Ionix_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ionix_AppUITests.swift; sourceTree = "<group>"; };
+		3B95BE5026BA293400AD8231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B95BE2326BA293100AD8231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE3C26BA293400AD8231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE4726BA293400AD8231 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B95BE1D26BA293100AD8231 = {
+			isa = PBXGroup;
+			children = (
+				3B95BE2826BA293100AD8231 /* Ionix App */,
+				3B95BE4226BA293400AD8231 /* Ionix AppTests */,
+				3B95BE4D26BA293400AD8231 /* Ionix AppUITests */,
+				3B95BE2726BA293100AD8231 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B95BE2726BA293100AD8231 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE2626BA293100AD8231 /* Ionix App.app */,
+				3B95BE3F26BA293400AD8231 /* Ionix AppTests.xctest */,
+				3B95BE4A26BA293400AD8231 /* Ionix AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B95BE2826BA293100AD8231 /* Ionix App */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE2926BA293100AD8231 /* AppDelegate.swift */,
+				3B95BE2B26BA293100AD8231 /* SceneDelegate.swift */,
+				3B95BE2D26BA293100AD8231 /* ViewController.swift */,
+				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
+				3B95BE3526BA293400AD8231 /* Assets.xcassets */,
+				3B95BE3726BA293400AD8231 /* LaunchScreen.storyboard */,
+				3B95BE3A26BA293400AD8231 /* Info.plist */,
+				3B95BE3226BA293100AD8231 /* Ionix_App.xcdatamodeld */,
+			);
+			path = "Ionix App";
+			sourceTree = "<group>";
+		};
+		3B95BE4226BA293400AD8231 /* Ionix AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE4326BA293400AD8231 /* Ionix_AppTests.swift */,
+				3B95BE4526BA293400AD8231 /* Info.plist */,
+			);
+			path = "Ionix AppTests";
+			sourceTree = "<group>";
+		};
+		3B95BE4D26BA293400AD8231 /* Ionix AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BE4E26BA293400AD8231 /* Ionix_AppUITests.swift */,
+				3B95BE5026BA293400AD8231 /* Info.plist */,
+			);
+			path = "Ionix AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B95BE2526BA293100AD8231 /* Ionix App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B95BE5326BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix App" */;
+			buildPhases = (
+				3B95BE2226BA293100AD8231 /* Sources */,
+				3B95BE2326BA293100AD8231 /* Frameworks */,
+				3B95BE2426BA293100AD8231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ionix App";
+			productName = "Ionix App";
+			productReference = 3B95BE2626BA293100AD8231 /* Ionix App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B95BE3E26BA293400AD8231 /* Ionix AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B95BE5626BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix AppTests" */;
+			buildPhases = (
+				3B95BE3B26BA293400AD8231 /* Sources */,
+				3B95BE3C26BA293400AD8231 /* Frameworks */,
+				3B95BE3D26BA293400AD8231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B95BE4126BA293400AD8231 /* PBXTargetDependency */,
+			);
+			name = "Ionix AppTests";
+			productName = "Ionix AppTests";
+			productReference = 3B95BE3F26BA293400AD8231 /* Ionix AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3B95BE4926BA293400AD8231 /* Ionix AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B95BE5926BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix AppUITests" */;
+			buildPhases = (
+				3B95BE4626BA293400AD8231 /* Sources */,
+				3B95BE4726BA293400AD8231 /* Frameworks */,
+				3B95BE4826BA293400AD8231 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B95BE4C26BA293400AD8231 /* PBXTargetDependency */,
+			);
+			name = "Ionix AppUITests";
+			productName = "Ionix AppUITests";
+			productReference = 3B95BE4A26BA293400AD8231 /* Ionix AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B95BE1E26BA293100AD8231 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					3B95BE2526BA293100AD8231 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					3B95BE3E26BA293400AD8231 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3B95BE2526BA293100AD8231;
+					};
+					3B95BE4926BA293400AD8231 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3B95BE2526BA293100AD8231;
+					};
+				};
+			};
+			buildConfigurationList = 3B95BE2126BA293100AD8231 /* Build configuration list for PBXProject "Ionix App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B95BE1D26BA293100AD8231;
+			productRefGroup = 3B95BE2726BA293100AD8231 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B95BE2526BA293100AD8231 /* Ionix App */,
+				3B95BE3E26BA293400AD8231 /* Ionix AppTests */,
+				3B95BE4926BA293400AD8231 /* Ionix AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B95BE2426BA293100AD8231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B95BE3926BA293400AD8231 /* LaunchScreen.storyboard in Resources */,
+				3B95BE3626BA293400AD8231 /* Assets.xcassets in Resources */,
+				3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE3D26BA293400AD8231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE4826BA293400AD8231 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B95BE2226BA293100AD8231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B95BE2E26BA293100AD8231 /* ViewController.swift in Sources */,
+				3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */,
+				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
+				3B95BE2C26BA293100AD8231 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE3B26BA293400AD8231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B95BE4426BA293400AD8231 /* Ionix_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B95BE4626BA293400AD8231 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B95BE4F26BA293400AD8231 /* Ionix_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B95BE4126BA293400AD8231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B95BE2526BA293100AD8231 /* Ionix App */;
+			targetProxy = 3B95BE4026BA293400AD8231 /* PBXContainerItemProxy */;
+		};
+		3B95BE4C26BA293400AD8231 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B95BE2526BA293100AD8231 /* Ionix App */;
+			targetProxy = 3B95BE4B26BA293400AD8231 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B95BE2F26BA293100AD8231 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B95BE3026BA293100AD8231 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B95BE3726BA293400AD8231 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B95BE3826BA293400AD8231 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B95BE5126BA293400AD8231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3B95BE5226BA293400AD8231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B95BE5426BA293400AD8231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B95BE5526BA293400AD8231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3B95BE5726BA293400AD8231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ionix App.app/Ionix App";
+			};
+			name = Debug;
+		};
+		3B95BE5826BA293400AD8231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ionix App.app/Ionix App";
+			};
+			name = Release;
+		};
+		3B95BE5A26BA293400AD8231 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ionix App";
+			};
+			name = Debug;
+		};
+		3B95BE5B26BA293400AD8231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3267FGWQEP;
+				INFOPLIST_FILE = "Ionix AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fcojlanda.Ionix-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ionix App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B95BE2126BA293100AD8231 /* Build configuration list for PBXProject "Ionix App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B95BE5126BA293400AD8231 /* Debug */,
+				3B95BE5226BA293400AD8231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B95BE5326BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B95BE5426BA293400AD8231 /* Debug */,
+				3B95BE5526BA293400AD8231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B95BE5626BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B95BE5726BA293400AD8231 /* Debug */,
+				3B95BE5826BA293400AD8231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B95BE5926BA293400AD8231 /* Build configuration list for PBXNativeTarget "Ionix AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B95BE5A26BA293400AD8231 /* Debug */,
+				3B95BE5B26BA293400AD8231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B95BE3226BA293100AD8231 /* Ionix_App.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B95BE3326BA293100AD8231 /* Ionix_App.xcdatamodel */,
+			);
+			currentVersion = 3B95BE3326BA293100AD8231 /* Ionix_App.xcdatamodel */;
+			path = Ionix_App.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3B95BE1E26BA293100AD8231 /* Project object */;
+}
