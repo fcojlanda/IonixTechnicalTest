@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2766AD1C-6120-49ED-AE50-8B6DEB6FA8E0"
+            uuid = "D762DC2A-7848-4B98-8E25-8C9F7488F006"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Ionix App/VIPER/Presenter/Carousel/CarouselVC.swift"
+            filePath = "Ionix App/VIPER/Interactor/Manager/PermissionManager/PermissionManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "pageViewController(_:viewControllerBefore:)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "requestUserForPermission(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

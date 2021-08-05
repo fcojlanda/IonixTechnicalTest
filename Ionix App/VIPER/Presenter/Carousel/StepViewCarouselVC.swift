@@ -51,16 +51,7 @@ class StepViewCarouselVC: UIViewController {
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
-        switch permission!.typePermission {
-        case .Camera:
-            break
-        case .Location:
-            break
-        case .PushNotifications:
-            break
-        default:
-            break
-        }
+        PermissionManager.requestUserForPermission(permission!.typePermission!)
     }
     @IBAction func alternativeButtonAction(_ sender: Any) {
         delegate?.nextView()
