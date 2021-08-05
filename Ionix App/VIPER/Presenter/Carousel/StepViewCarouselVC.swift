@@ -18,8 +18,10 @@ class StepViewCarouselVC: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var mainButton: UIButton!
     @IBOutlet var alternativeButton: UIButton!
+    @IBOutlet var lastButton: UIButton!
     
     var permission: PermissionEntity?
+    var isLastPermission = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +36,11 @@ class StepViewCarouselVC: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    static public func setPermission(permission: PermissionEntity)->StepViewCarouselVC{
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "stepViewCarouselVC") as! StepViewCarouselVC
-        vc.permission = permission
-        return vc
+    static public func setPermission(permission: PermissionEntity, isLastPermission: Bool = false)->StepViewCarouselVC{
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "stepViewCarouselVC") as? StepViewCarouselVC
+        vc!.permission = permission
+        vc!.isLastPermission = isLastPermission
+        return vc!
     }
     
     private func initViewController(){
@@ -46,8 +49,17 @@ class StepViewCarouselVC: UIViewController {
         descriptionLabel.text = permission?.descriptionPermission ?? ""
         
         mainButton.setTitle("Enable", for: .normal)
-        alternativeButton.setTitle("Cancel", for: .normal)
         mainButton.tintColor = UIColor.gray
+        
+        alternativeButton.setTitle("Cancel", for: .normal)
+        
+        if isLastPermission {
+            lastButton.setTitle("Finish", for: .normal)
+            lastButton.isHidden = false
+        }else{
+            lastButton.isHidden = true
+        }
+
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
@@ -56,4 +68,8 @@ class StepViewCarouselVC: UIViewController {
     @IBAction func alternativeButtonAction(_ sender: Any) {
         delegate?.nextView()
     }
+    
+    @IBAction func lastButtonAction(_ sender: Any) {
+    }
+    
 }

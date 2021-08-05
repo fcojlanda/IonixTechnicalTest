@@ -27,7 +27,8 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
                                                             imageNamePermission: "locationPermission",
                                                             titlePermission: "Enable Location Services",
                                                             descriptionPermission: "We wants to access your location only to provide a better experience by helping you find new friends nearby.",
-                                                            typePermission: .Location))
+                                                            typePermission: .Location),
+                                                            isLastPermission: true)
         thirdView.delegate = self
         
         return [firstView, secondView, thirdView]
