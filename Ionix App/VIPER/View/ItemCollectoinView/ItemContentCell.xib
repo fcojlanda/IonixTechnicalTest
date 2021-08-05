@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemContentCell" customModule="Ionix_App" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="itemContentCell" id="gTV-IL-0wX" customClass="ItemContentCell" customModule="Ionix_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -81,7 +82,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="MPd-pm-99h" firstAttribute="top" secondItem="NkV-Zw-fci" secondAttribute="top" id="4gw-aG-Ome"/>
                                     <constraint firstItem="MPd-pm-99h" firstAttribute="centerX" secondItem="NkV-Zw-fci" secondAttribute="centerX" multiplier="0.6" id="5dV-l7-uG5"/>
@@ -121,7 +121,7 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Em3-xR-Qbb" firstAttribute="centerY" secondItem="f9f-Iu-GZa" secondAttribute="centerY" id="0c1-UN-TdH"/>
                                             <constraint firstItem="cEf-lD-z4f" firstAttribute="top" secondItem="f9f-Iu-GZa" secondAttribute="top" id="4tM-FU-qSY"/>
@@ -142,7 +142,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="WqE-Ze-uvY" firstAttribute="top" secondItem="7De-GB-XcQ" secondAttribute="top" constant="10" id="6fi-1H-TeZ"/>
                                             <constraint firstAttribute="bottom" secondItem="WqE-Ze-uvY" secondAttribute="bottom" constant="5" id="a2m-a6-ogj"/>
@@ -151,7 +150,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="7De-GB-XcQ" firstAttribute="leading" secondItem="f9f-Iu-GZa" secondAttribute="trailing" id="1Op-Q5-oIH"/>
                                     <constraint firstAttribute="bottom" secondItem="7De-GB-XcQ" secondAttribute="bottom" id="Dke-zq-9Lh"/>
@@ -165,7 +163,7 @@
                                     <constraint firstAttribute="trailing" secondItem="7De-GB-XcQ" secondAttribute="trailing" id="y9F-QX-sqP"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-ZR-NlF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-ZR-NlF">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="280"/>
                             </imageView>
                         </subviews>

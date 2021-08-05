@@ -18,7 +18,11 @@ class ItemContentCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func initItem(){
+    func initItem(content: ContentEntity){
         self.setRoundedCorner()
+        counterLabel.text = "\(content.score!)"
+        shotInfoLabel.text = "\(content.num_comments!)"
+        contentLabel.text = content.title
+        coverImage.image = content.image
     }
 }
