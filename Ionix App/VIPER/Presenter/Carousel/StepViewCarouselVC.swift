@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol StepViewCarouselProtocol{
+    func nextView()
+}
+
 class StepViewCarouselVC: UIViewController {
+    var delegate: StepViewCarouselProtocol?
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -18,6 +23,7 @@ class StepViewCarouselVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViewController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,14 +34,20 @@ class StepViewCarouselVC: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    public func setPermission(permission: PermissionEntity){
-        self.permission = permission
+    static public func setPermission(permission: PermissionEntity)->StepViewCarouselVC{
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "stepViewCarouselVC") as! StepViewCarouselVC
+        vc.permission = permission
+        return vc
     }
     
     private func initViewController(){
         mainImage.image = UIImage(named: permission?.imageNamePermission ?? "")
         titleLabel.text = permission?.titlePermission ?? ""
         descriptionLabel.text = permission?.descriptionPermission ?? ""
+        
+        mainButton.setTitle("Enable", for: .normal)
+        alternativeButton.setTitle("Cancel", for: .normal)
+        mainButton.tintColor = UIColor.gray
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
@@ -51,6 +63,6 @@ class StepViewCarouselVC: UIViewController {
         }
     }
     @IBAction func alternativeButtonAction(_ sender: Any) {
-        
+        delegate?.nextView()
     }
 }
