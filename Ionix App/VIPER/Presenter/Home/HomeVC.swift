@@ -25,23 +25,20 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "engine"), style: .plain, target: self, action: #selector(addTapped))
         
         arrayContent = [ContentEntity]()
-        arrayContent?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Hola",
-                                score: 7,
-                                num_comments: 35))
-        
-        arrayContent?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Adiós",
-                                score: 10,
-                                num_comments: 53))
         
         self.contentCollection.dataSource = self
         self.contentCollection.delegate = self
         self.contentCollection.register(UINib(nibName: "ItemContentCell", bundle: nil), forCellWithReuseIdentifier: "itemContentCell")
+        
+        ServicesManager.shared.getListMemes(whenFinish: { (status, result, error) -> Void in
+            DispatchQueue.main.async {
+                if status {
+                    
+                }else{
+                    
+                }
+            }
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
