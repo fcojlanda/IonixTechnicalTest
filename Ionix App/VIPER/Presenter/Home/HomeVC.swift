@@ -10,6 +10,8 @@ import UIKit
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet var contentCollection: UICollectionView!
     @IBOutlet var searcher: UISearchBar!
+    @IBOutlet var viewContent: UIView!
+    @IBOutlet var viewError: UIView!
     
     private var arrayContent: [ContentEntity]?
     
