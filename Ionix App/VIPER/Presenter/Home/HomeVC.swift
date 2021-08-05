@@ -22,7 +22,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     private func initViewController(){
+        
+        if (UserDefaults.standard.value(forKey: "firstTime") == nil) {
+            MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
+            //UserDefaults.standard.setValue(true, forKey: "firstTime")
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "engine"), style: .plain, target: self, action: #selector(addTapped))
+        
+        
         
         arrayContent = [ContentEntity]()
         arrayContent?.append(ContentEntity(
@@ -66,6 +73,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @objc func addTapped(sender: AnyObject) {
-        print("hjxdbsdhjbv")
+        MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
     }
 }

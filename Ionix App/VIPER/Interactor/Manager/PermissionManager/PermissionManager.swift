@@ -25,22 +25,15 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
         switch permission {
         case .Camera:
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
-                if granted {
-                    
-                } else {
-
-                }
+                UserDefaults.standard.setValue(granted, forKey: permission.getStringValue())
             }
             break
         case .Location:
+            UserDefaults.standard.setValue(false, forKey: permission.getStringValue())
             break
         case .PushNotifications:
             UNUserNotificationCenter.current().requestAuthorization(options: [.sound,.alert,.badge]) { (granted, error) in
-                if granted {
-                    
-                }else{
-                    
-                }
+                UserDefaults.standard.setValue(granted, forKey: permission.getStringValue())
             }
             break
         default:

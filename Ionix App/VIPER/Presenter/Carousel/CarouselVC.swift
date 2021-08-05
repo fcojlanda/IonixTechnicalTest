@@ -17,7 +17,7 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         firstView.delegate = self
         
         let secondView = StepViewCarouselVC.setPermission(permission: PermissionEntity(
-                                                                imageNamePermission: "PushNotificationPermission",
+                                                                imageNamePermission: "pushNotificationPermission",
                                                                 titlePermission: "Enable Push Notifications",
                                                                 descriptionPermission: "Enable push notifications to let send you personal news and updates.",
                                                                 typePermission: .PushNotifications))
@@ -71,13 +71,17 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
         }
     }
     
-    func nextView() {
-        if currentPage < screenPermissions.count - 1 {
-            currentPage+=1
+    func nextView(finishCarousel: Bool) {
+        if finishCarousel {
+            self.dismiss(animated: true, completion: nil)            
         }else{
-            currentPage = 0
+            if currentPage < screenPermissions.count - 1 {
+                currentPage+=1
+            }else{
+                currentPage = 0
+            }
+            setCurrentPage()
         }
-        setCurrentPage()
     }
     
     private func setCurrentPage(){

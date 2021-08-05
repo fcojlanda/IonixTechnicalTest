@@ -8,7 +8,7 @@
 import UIKit
 
 protocol StepViewCarouselProtocol{
-    func nextView()
+    func nextView(finishCarousel: Bool)
 }
 
 class StepViewCarouselVC: UIViewController {
@@ -66,10 +66,11 @@ class StepViewCarouselVC: UIViewController {
         PermissionManager.requestUserForPermission(permission!.typePermission!)
     }
     @IBAction func alternativeButtonAction(_ sender: Any) {
-        delegate?.nextView()
+        delegate?.nextView(finishCarousel: false)
     }
     
     @IBAction func lastButtonAction(_ sender: Any) {
+        delegate?.nextView(finishCarousel: true)
     }
     
 }
