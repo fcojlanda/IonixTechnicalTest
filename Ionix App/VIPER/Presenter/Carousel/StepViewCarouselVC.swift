@@ -48,13 +48,18 @@ class StepViewCarouselVC: UIViewController {
         titleLabel.text = permission?.titlePermission ?? ""
         descriptionLabel.text = permission?.descriptionPermission ?? ""
         
-        mainButton.setTitle("Enable", for: .normal)
-        mainButton.tintColor = UIColor.gray
+        if PermissionManager.getStatusPermission(permission!.typePermission!) {
+            
+        }else{
+            mainButton.setMainButton(text: "Enable")
+            mainButton.tintColor = UIColor.gray
+            
+            alternativeButton.setSecundaryButton(text: "Cancel")
+        }
         
-        alternativeButton.setTitle("Cancel", for: .normal)
         
         if isLastPermission {
-            lastButton.setTitle("Finish", for: .normal)
+            lastButton.setAlternativeButton(text: "Finish")
             lastButton.isHidden = false
         }else{
             lastButton.isHidden = true

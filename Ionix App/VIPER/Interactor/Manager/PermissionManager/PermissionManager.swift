@@ -41,6 +41,28 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    static func getStatusPermission(_ permission: TypePermission)->Bool{
+        switch permission {
+        case .Camera:
+            return AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.authorized ? true : false
+        case .PushNotifications:
+            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+                switch settings.authorizationStatus {
+                case .authorized: break
+                    
+                default: break
+                    
+                }
+            }
+            return false
+        case .Location:
+            return false
+        default:
+            return false
+        }
+        
+    }
+    
     public func locationManager(_ manager: CLLocationManager,
                                     didChangeAuthorization status: CLAuthorizationStatus) {
     }

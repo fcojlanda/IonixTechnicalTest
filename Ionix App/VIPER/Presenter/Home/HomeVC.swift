@@ -7,13 +7,14 @@
 
 import UIKit
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating {
     @IBOutlet var contentCollection: UICollectionView!
-    @IBOutlet var searcher: UISearchBar!
+    var searchController : UISearchController?
     @IBOutlet var viewContent: UIView!
     @IBOutlet var viewError: UIView!
     
     private var arrayContent: [ContentEntity]?
+    private var arrayContentBackup: [ContentEntity]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,29 +23,36 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     private func initViewController(){
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchResultsUpdater = self
+        searchController?.obscuresBackgroundDuringPresentation = false
+        searchController?.searchBar.placeholder = "Search"
+        self.navigationItem.searchController = searchController
         
         if (UserDefaults.standard.value(forKey: "firstTime") == nil) {
             MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
             //UserDefaults.standard.setValue(true, forKey: "firstTime")
         }
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "engine"), style: .plain, target: self, action: #selector(addTapped))
-        
-        
-        
+                
         arrayContent = [ContentEntity]()
-        arrayContent?.append(ContentEntity(
+        arrayContentBackup = [ContentEntity]()
+        
+        arrayContentBackup?.append(ContentEntity(
                                 image: UIImage(named: "backgroundPlaceholder"),
                                 urlImage: "",
                                 title: "Hola",
                                 score: 7,
                                 num_comments: 35))
         
-        arrayContent?.append(ContentEntity(
+        arrayContentBackup?.append(ContentEntity(
                                 image: UIImage(named: "backgroundPlaceholder"),
                                 urlImage: "",
                                 title: "Adiós",
                                 score: 10,
                                 num_comments: 53))
+        
+        arrayContent = arrayContentBackup
         
         self.contentCollection.dataSource = self
         self.contentCollection.delegate = self
@@ -70,6 +78,30 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let width = self.contentCollection.frame.width
         let height = width * 1.1
         return CGSize(width: width, height: height)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContent(param: searchBar.text!)
+    }
+    
+    func filterContent(param: String){
+        if param == "" {
+            arrayContent = arrayContentBackup
+        }else{
+            arrayContent = arrayContentBackup!.filter {
+                $0.title!.lowercased().contains(param.lowercased())
+            }
+        }
+        
+        if arrayContent?.count == 0 {
+            viewError.isHidden = false
+            viewContent.isHidden = true
+        }else{
+            viewError.isHidden = true
+            viewContent.isHidden = false
+            contentCollection.reloadData()
+        }
     }
     
     @objc func addTapped(sender: AnyObject) {

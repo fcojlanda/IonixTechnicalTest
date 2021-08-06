@@ -42,8 +42,12 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     }
     
     private func initViewController(){
+        /* I found a Bug in UIKit published by Apple Developer. For this reason and to try to finish the
+        technical test, I set pageCurl instead scroll transition.
+         */
         dataSource = self
         delegate = self
+        
         
         setCurrentPage()
     }
