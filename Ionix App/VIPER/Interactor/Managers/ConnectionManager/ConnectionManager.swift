@@ -41,7 +41,7 @@ class ConnectionManager {
         return ret
     }
     
-    func APIRequest (to url: String, of type: TypeRequest, headers: [String: String]? = nil, whenFinish: @escaping (Bool, Data?, Error?) -> Void){
+    func APIRequest (to url: String, of type: TypeRequest, headers: [String: String]? = nil, whenFinish: @escaping (Bool, Data?, TypeServiceError?) -> Void){
         if isConnectedToNetwork() {
             let session: URLSession = URLSession(configuration: .default)
             
@@ -54,30 +54,28 @@ class ConnectionManager {
                 }
             }
             
-            session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            session.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error != nil {
-                    whenFinish(false, nil, error)
+                    whenFinish(false, nil, TypeServiceError.Unexpected)
                     return
                 }
                 
                 if let response = response as? HTTPURLResponse {
-                    let error = NSError(domain: url, code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: "No se pudo obtener la respuesta correctamente"])
                     if 200 ... 299 ~= response.statusCode {
                         if data != nil {
                             whenFinish(true, data!, nil)
                         }else{
-                            whenFinish(false, nil, error)
+                            whenFinish(false, nil, TypeServiceError.NoData)
                         }
                     }else{
-                        whenFinish(false, nil, error)
+                        whenFinish(false, nil, TypeServiceError.NoCorrectRequest)
                     }
                 }else{
-                    whenFinish(false, nil, error)
+                    whenFinish(false, nil, TypeServiceError.Unexpected)
                 }
             }).resume()
         }else{
-            let error = NSError(domain: url, code: -1, userInfo: [NSLocalizedDescriptionKey: "No se encontró conexión a Internet"])
-            whenFinish(false, nil, error)
+            whenFinish(false, nil, TypeServiceError.NoConnection)
         }
         
     }

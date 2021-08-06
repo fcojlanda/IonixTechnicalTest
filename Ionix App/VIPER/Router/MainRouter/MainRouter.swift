@@ -21,9 +21,5 @@ class MainRouter{
     func goCarouselPermission(){
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "carouselVC") as? CarouselVC
         self.baseNavigation?.present(vc!, animated: true, completion: nil)
-    }
-    
-//    func dismissCurrentView(_ viewController: UIViewController){
-//        viewController.dismiss(animated: true, completion: nil)
-//    }
+    }    
 }
