@@ -28,7 +28,7 @@
 	<string>Main</string>
 	<key>NSCameraUsageDescription</key>
 	<string>We need to use your camera to get correctly out functions</string>
-	<key>NSLocationUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to use your current location to get correctly out functions</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

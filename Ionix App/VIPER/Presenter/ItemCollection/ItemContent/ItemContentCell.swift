@@ -12,6 +12,7 @@ class ItemContentCell: UICollectionViewCell {
     @IBOutlet var counterLabel: UILabel!
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var shotInfoLabel: UILabel!
+    @IBOutlet var loaderActivity: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +24,16 @@ class ItemContentCell: UICollectionViewCell {
         counterLabel.text = "\(content.score!)"
         shotInfoLabel.text = "\(content.num_comments!)"
         contentLabel.text = content.title
-        coverImage.image = content.image
+        coverImage.image = content.memeImage
+        coverImage.contentMode = .scaleAspectFill
+        loaderActivity.startAnimating()
+        loaderActivity.isHidden = false
+        coverImage.downloadImage(url: content.urlImage!, loaded: { (status) in
+            DispatchQueue.main.async {
+                self.coverImage.contentMode = .scaleAspectFit
+                self.loaderActivity.stopAnimating()
+                self.loaderActivity.isHidden = true
+            }
+        })
     }
 }

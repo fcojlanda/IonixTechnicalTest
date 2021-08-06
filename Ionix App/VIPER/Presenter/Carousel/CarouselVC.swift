@@ -59,20 +59,20 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if currentPage == 0 {
-            return nil
+            currentPage = screenPermissions.count - 1
         } else {
             currentPage-=1
-            return screenPermissions[currentPage]
         }
+        return screenPermissions[currentPage]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if currentPage == screenPermissions.count - 1 {
-            return nil
+            currentPage = 0
         } else {
             currentPage+=1
-            return screenPermissions[currentPage]
         }
+        return screenPermissions[currentPage]
     }
     
     func nextView(finishCarousel: Bool) {

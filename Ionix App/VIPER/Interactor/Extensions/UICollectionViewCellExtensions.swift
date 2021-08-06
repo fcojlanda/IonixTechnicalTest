@@ -14,8 +14,8 @@ extension UICollectionViewCell {
         self.contentView.layer.borderWidth = 0.0
         self.contentView.layer.masksToBounds = true
         
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 3.0)
         self.layer.shadowRadius = 5.0
         self.layer.shadowOpacity = 1.0
         self.layer.masksToBounds = false

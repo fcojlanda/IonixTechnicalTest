@@ -9,12 +9,14 @@ import UIKit
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating {
     @IBOutlet var contentCollection: UICollectionView!
-    var searchController : UISearchController?
     @IBOutlet var viewContent: UIView!
     @IBOutlet var viewError: UIView!
     
+    private var searchController : UISearchController?
     private var arrayContent: [ContentEntity]?
     private var arrayContentBackup: [ContentEntity]?
+    private var alert: UIAlertController?
+    private var loaderView : LoaderVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,34 +31,23 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         searchController?.searchBar.placeholder = "Search"
         self.navigationItem.searchController = searchController
         
-        if (UserDefaults.standard.value(forKey: "firstTime") == nil) {
-            MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
-            //UserDefaults.standard.setValue(true, forKey: "firstTime")
-        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "engine"), style: .plain, target: self, action: #selector(addTapped))
-                
+        
         arrayContent = [ContentEntity]()
         arrayContentBackup = [ContentEntity]()
-        
-        arrayContentBackup?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Hola",
-                                score: 7,
-                                num_comments: 35))
-        
-        arrayContentBackup?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Adiós",
-                                score: 10,
-                                num_comments: 53))
         
         arrayContent = arrayContentBackup
         
         self.contentCollection.dataSource = self
         self.contentCollection.delegate = self
         self.contentCollection.register(UINib(nibName: "ItemContentCell", bundle: nil), forCellWithReuseIdentifier: "itemContentCell")
+        
+        if (UserDefaults.standard.value(forKey: "firstTime") == nil) {
+            MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
+            UserDefaults.standard.setValue(true, forKey: "firstTime")
+        }else{
+            getMemes()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,6 +97,26 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc func addTapped(sender: AnyObject) {
         MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
+    }
+    
+    private func getMemes(){
+        if loaderView == nil {
+            loaderView = LoaderVC(nibName: "LoaderVC", bundle: nil)
+        }
+        present(loaderView!, animated: true, completion: nil)
+        ServicesManager.shared.getListMemes(limit: 100, whenFinish: { (status, response, error) in
+            DispatchQueue.main.async {
+                self.loaderView!.dismiss(animated: true, completion: nil)
+                if status {
+                    self.arrayContentBackup = response as? [ContentEntity]
+                    self.arrayContent = self.arrayContentBackup
+                    self.contentCollection.reloadData()
+                }else{
+                    
+                }
+            }
+            
+        })
     }
     
 }
