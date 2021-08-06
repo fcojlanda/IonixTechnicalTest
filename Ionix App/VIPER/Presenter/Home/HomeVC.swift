@@ -38,25 +38,35 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         arrayContent = [ContentEntity]()
         arrayContentBackup = [ContentEntity]()
         
-        arrayContentBackup?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Hola",
-                                score: 7,
-                                num_comments: 35))
-        
-        arrayContentBackup?.append(ContentEntity(
-                                image: UIImage(named: "backgroundPlaceholder"),
-                                urlImage: "",
-                                title: "Adiós",
-                                score: 10,
-                                num_comments: 53))
+//        arrayContentBackup?.append(ContentEntity(
+//                                image: UIImage(named: "backgroundPlaceholder"),
+//                                urlImage: "",
+//                                title: "Hola",
+//                                score: 7,
+//                                num_comments: 35))
+//        
+//        arrayContentBackup?.append(ContentEntity(
+//                                image: UIImage(named: "backgroundPlaceholder"),
+//                                urlImage: "",
+//                                title: "Adiós",
+//                                score: 10,
+//                                num_comments: 53))
         
         arrayContent = arrayContentBackup
         
         self.contentCollection.dataSource = self
         self.contentCollection.delegate = self
         self.contentCollection.register(UINib(nibName: "ItemContentCell", bundle: nil), forCellWithReuseIdentifier: "itemContentCell")
+        
+        ServicesManager.shared.getListMemes(limit: 100, whenFinish: { (status, response, error) in
+            if status {
+                self.arrayContentBackup = response as! [ContentEntity]
+                self.arrayContent = self.arrayContentBackup
+                self.contentCollection.reloadData()
+            }else{
+                
+            }
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -27,6 +27,8 @@
 		3B95BEA126BCC5E700AD8231 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA026BCC5E700AD8231 /* HomeVC.swift */; };
 		3B95BEA426BCC61300AD8231 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA326BCC61300AD8231 /* PermissionManager.swift */; };
 		3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */; };
+		3B95BEAC26BCC70000AD8231 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEAB26BCC70000AD8231 /* MainRouter.swift */; };
+		3B95BEAE26BCDAED00AD8231 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		3B95BEA026BCC5E700AD8231 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3B95BEA326BCC61300AD8231 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		3B95BEAB26BCC70000AD8231 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		3B95BE5D26BA511A00AD8231 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BEAA26BCC70000AD8231 /* MainRouter */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			children = (
 				3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */,
 				3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */,
+				3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +336,14 @@
 				3B95BEA326BCC61300AD8231 /* PermissionManager.swift */,
 			);
 			path = PermissionManager;
+			sourceTree = "<group>";
+		};
+		3B95BEAA26BCC70000AD8231 /* MainRouter */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BEAB26BCC70000AD8231 /* MainRouter.swift */,
+			);
+			path = MainRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B95BE7426BAF42700AD8231 /* PermissionEntity.swift in Sources */,
+				3B95BEAC26BCC70000AD8231 /* MainRouter.swift in Sources */,
 				3B95BE3426BA293100AD8231 /* Ionix_App.xcdatamodeld in Sources */,
 				3B95BE7C26BB2C0F00AD8231 /* ItemContentCell.swift in Sources */,
 				3B95BEA426BCC61300AD8231 /* PermissionManager.swift in Sources */,
@@ -476,6 +491,7 @@
 				3B95BEA126BCC5E700AD8231 /* HomeVC.swift in Sources */,
 				3B95BE8D26BBA87500AD8231 /* ConnectionManager.swift in Sources */,
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
+				3B95BEAE26BCDAED00AD8231 /* UIImageViewExtension.swift in Sources */,
 				3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

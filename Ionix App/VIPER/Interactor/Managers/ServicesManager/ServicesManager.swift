@@ -25,7 +25,7 @@ class ServicesManager {
             
             if data != nil {
                 if let json : [String: Any] = try! JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-                    let arrayContent = self.decodeResponse(json: json)
+                    let arrayContent = self.decodeResponse(json: json["data"] as? [String: Any] ?? [:])
                     whenFinish(true, arrayContent, nil)
                 }else{
                     whenFinish(false, nil, error)
@@ -38,19 +38,21 @@ class ServicesManager {
     
     
     private func decodeResponse(json: [String: Any]) -> [Any]{
-        var arrayContent = [Any]()
-        do {
-            if let children = json["children"] as? [[String: Any]] {
-                let objectData = try JSONSerialization.data(withJSONObject: children, options: [])
-                let decoder = JSONDecoder()
-                let object = try decoder.decode(ContentEntity.self, from: objectData)
-                arrayContent.append(object)
-            }
+        var arrayContent = [ContentEntity]()
+        if let children = json["children"] as? [[String: Any]] {
+            let secondFilter = children.filter({
+                ($0["data"] as? [String: Any])!["link_flair_text"] as? String == "Shitposting"
+            })
             
-        }catch let errorDecoder {
-            print(errorDecoder)
+            let postWithImage = secondFilter.filter({
+                ($0["data"] as? [String: Any])!["post_hint"] as? String == "image"
+            })
+            
+            for post in postWithImage {
+                arrayContent.append(ContentEntity(data: post["data"] as? [String: Any] ?? [:]))
+            }
+                
         }
-        
         return arrayContent
     }
     

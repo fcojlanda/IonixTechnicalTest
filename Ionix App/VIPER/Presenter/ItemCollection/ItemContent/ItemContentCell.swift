@@ -23,6 +23,6 @@ class ItemContentCell: UICollectionViewCell {
         counterLabel.text = "\(content.score!)"
         shotInfoLabel.text = "\(content.num_comments!)"
         contentLabel.text = content.title
-        coverImage.image = content.image
+//        coverImage.image = content.image
     }
 }
