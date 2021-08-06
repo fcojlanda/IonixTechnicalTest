@@ -25,3 +25,15 @@ enum TypePermission{
         }
     }
 }
+
+enum TypeRequest {
+    case GET, POST, PUT
+    
+    func description()->String {
+        switch self {
+        case .GET: return "GET"
+        case .POST: return "POST"
+        case .PUT: return "PUT"
+        }
+    }
+}

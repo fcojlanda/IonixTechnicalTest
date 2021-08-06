@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
-struct ContentEntity{
+struct ContentEntity: Codable{
     var image: UIImage?
     var urlImage: String?
     var title: String?
     var score: Int?
     var num_comments: Int?
+    
+    init(from decoder: Decoder) throws {
+    }
+    
+    func encode(to encoder: Encoder) throws {
+    }
 }
