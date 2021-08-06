@@ -63,6 +63,7 @@ class PermissionManager: NSObject, CLLocationManagerDelegate {
         
     }
     
+    
     public func locationManager(_ manager: CLLocationManager,
                                     didChangeAuthorization status: CLAuthorizationStatus) {
     }
