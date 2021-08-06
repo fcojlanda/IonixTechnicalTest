@@ -107,4 +107,5 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @objc func addTapped(sender: AnyObject) {
         MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
     }
+    
 }
