@@ -26,7 +26,19 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var buttonsView: UIView!
     @IBOutlet var statusView: UIView!
     
-    private var statusPermission: Bool? = false
+    private var statusPermission: Bool? = false {
+        didSet{
+            DispatchQueue.main.async {
+                if self.statusPermission! {
+                    self.statusLabel.text = "Granted"
+                    self.statusLabel.textColor = UIColor(named: "grantedColor")
+                }else{
+                    self.statusLabel.text = "Rejected"
+                    self.statusLabel.textColor = UIColor(named: "rejectedColor")
+                }
+            }
+        }
+    }
     private var locationManager: CLLocationManager?
     private var permission: PermissionEntity?
     private var isLastPermission = false
@@ -172,13 +184,6 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
         if askedUsedForPermission(permission!.typePermission!) == true {
             viewForAskUserForPermission(show: false)
             getStatusPermission(permission!.typePermission!)
-            if statusPermission! {
-                statusLabel.text = "Granted"
-                statusLabel.textColor = UIColor(named: "grantedColor")
-            }else{
-                statusLabel.text = "Rejected"
-                statusLabel.textColor = UIColor(named: "rejectedColor")
-            }
         }else{
             viewForAskUserForPermission(show: true)
             mainButton.setMainButton(text: "Allow")
