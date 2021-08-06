@@ -18,8 +18,9 @@ class MainRouter{
         return instance
     }
     
-    func goCarouselPermission(){
+    func goCarouselPermission(context: UIViewController){
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "carouselVC") as? CarouselVC
+        vc?.delegateCarousel = context as? CarouselProtocol
         self.baseNavigation?.present(vc!, animated: true, completion: nil)
     }        
 }

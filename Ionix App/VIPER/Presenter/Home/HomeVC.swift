@@ -7,7 +7,8 @@
 
 import UIKit
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchResultsUpdating, CarouselProtocol {
+    
     @IBOutlet var contentCollection: UICollectionView!
     @IBOutlet var viewContent: UIView!
     @IBOutlet var viewError: UIView!
@@ -20,8 +21,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initViewController()
-        // Do any additional setup after loading the view.
+        self.initViewController()        
     }
     
     private func initViewController(){
@@ -41,13 +41,17 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.contentCollection.dataSource = self
         self.contentCollection.delegate = self
         self.contentCollection.register(UINib(nibName: "ItemContentCell", bundle: nil), forCellWithReuseIdentifier: "itemContentCell")
-        
+            
         if (UserDefaults.standard.value(forKey: "firstTime") == nil) {
-            MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
+            MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission(context: self)
             UserDefaults.standard.setValue(true, forKey: "firstTime")
         }else{
             getMemes()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,7 +100,13 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     @objc func addTapped(sender: AnyObject) {
-        MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission()
+        MainRouter.sharedWith(navigation: self.navigationController!).goCarouselPermission(context: self)
+    }
+    
+    func viewDismissed() {
+        if arrayContentBackup?.count == 0 {
+            getMemes()
+        }
     }
     
     private func getMemes(){

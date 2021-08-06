@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol CarouselProtocol{
+    func viewDismissed()
+}
+
 class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, StepViewCarouselProtocol {
+    var delegateCarousel: CarouselProtocol?
     lazy var screenPermissions : [StepViewCarouselVC] = {
         let firstView = StepViewCarouselVC.setPermission(permission: PermissionEntity(
                                                             imageNamePermission: "cameraPermission",
@@ -77,7 +82,9 @@ class CarouselVC: UIPageViewController, UIPageViewControllerDataSource, UIPageVi
     
     func nextView(finishCarousel: Bool) {
         if finishCarousel {
-            self.dismiss(animated: true, completion: nil)            
+            self.dismiss(animated: true, completion: {
+                self.delegateCarousel?.viewDismissed()
+            })
         }else{
             if currentPage < screenPermissions.count - 1 {
                 currentPage+=1

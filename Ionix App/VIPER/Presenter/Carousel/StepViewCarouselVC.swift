@@ -18,18 +18,18 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
     var delegate: StepViewCarouselProtocol?
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var mainButton: UIButton!
     @IBOutlet var alternativeButton: UIButton!
     @IBOutlet var lastButton: UIButton!
-    @IBOutlet var statusLabel: UILabel!
     @IBOutlet var buttonsView: UIView!
     @IBOutlet var statusView: UIView!
+    
     private var statusPermission: Bool? = false
     private var locationManager: CLLocationManager?
-    
-    var permission: PermissionEntity?
-    var isLastPermission = false
+    private var permission: PermissionEntity?
+    private var isLastPermission = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,51 +61,24 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
             locationManager?.delegate = self
         }
         
-        if askedUsedForPermission(permission!.typePermission!) == true {
-            viewForAskUserForPermission(show: false)
-            getStatusPermission(permission!.typePermission!)
-            if statusPermission! {
-                statusLabel.text = "Granted"
-                statusLabel.textColor = UIColor(named: "grantedColor")
-            }else{
-                statusLabel.text = "Rejected"
-                statusLabel.textColor = UIColor(named: "rejectedColor")
-            }
-        }else{
-            viewForAskUserForPermission(show: true)
-            mainButton.setMainButton(text: "Allow")
-            alternativeButton.setSecundaryButton(text: "Cancel")
-        }
-        
         if isLastPermission {
             lastButton.setAlternativeButton(text: "Finish")
             lastButton.isHidden = false
         }else{
             lastButton.isHidden = true
         }
-    }
-    
-    private func viewForAskUserForPermission(show: Bool){
-        buttonsView.isHidden = !show
-        statusView.isHidden = show
+        
+        defineTypeView()
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
-        requestUserForPermission()
-    }
-    @IBAction func alternativeButtonAction(_ sender: Any) {
-        delegate?.nextView(finishCarousel: false)
-    }
-    
-    @IBAction func lastButtonAction(_ sender: Any) {
-        delegate?.nextView(finishCarousel: true)
-    }
-    
-    private func requestUserForPermission(){
         switch permission!.typePermission! {
         case .Camera:
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
-                UserDefaults.standard.setValue(granted, forKey: self.permission!.typePermission!.getStringValue())
+                DispatchQueue.main.async {
+                    UserDefaults.standard.setValue(granted, forKey: self.permission!.typePermission!.getStringValue())
+                    self.defineTypeView()
+                }
             }
             break
         case .Location:
@@ -113,12 +86,23 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
             break
         case .PushNotifications:
             UNUserNotificationCenter.current().requestAuthorization(options: [.sound,.alert,.badge]) { (granted, error) in
-                UserDefaults.standard.setValue(granted, forKey: self.permission!.typePermission!.getStringValue())
+                DispatchQueue.main.async {
+                    UserDefaults.standard.setValue(granted, forKey: self.permission!.typePermission!.getStringValue())
+                    self.defineTypeView()
+                }
             }
             break
         default:
             break
         }
+    }
+    
+    @IBAction func alternativeButtonAction(_ sender: Any) {
+        delegate?.nextView(finishCarousel: false)
+    }
+    
+    @IBAction func lastButtonAction(_ sender: Any) {
+        delegate?.nextView(finishCarousel: true)
     }
     
     private func getStatusPermission(_ permission: TypePermission){
@@ -147,8 +131,11 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
                     case .authorizedAlways, .authorizedWhenInUse:
                         self.statusPermission = true
                         break
-                    default:
+                    case .denied:
                         self.statusPermission = false
+                        break
+                    default:
+                        self.statusPermission = nil
                         break
                 }
             } else {
@@ -160,16 +147,47 @@ class StepViewCarouselVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func askedUsedForPermission(_ permission: TypePermission)->Bool{
+    private func askedUsedForPermission(_ permission: TypePermission)->Bool{
         return (UserDefaults.standard.value(forKey: permission.getStringValue()) == nil) ? false : true
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
+        switch status {
+        case .authorizedAlways:
             UserDefaults.standard.setValue(true, forKey: permission!.typePermission!.getStringValue())
-        }else{
+            break
+        case .authorizedWhenInUse:
+            UserDefaults.standard.setValue(true, forKey: permission!.typePermission!.getStringValue())
+            break
+        case .denied:
             UserDefaults.standard.setValue(false, forKey: permission!.typePermission!.getStringValue())
+            break
+        default:
+            break
         }
-        viewForAskUserForPermission(show: false)
+        defineTypeView()
+    }
+    
+    private func defineTypeView (){
+        if askedUsedForPermission(permission!.typePermission!) == true {
+            viewForAskUserForPermission(show: false)
+            getStatusPermission(permission!.typePermission!)
+            if statusPermission! {
+                statusLabel.text = "Granted"
+                statusLabel.textColor = UIColor(named: "grantedColor")
+            }else{
+                statusLabel.text = "Rejected"
+                statusLabel.textColor = UIColor(named: "rejectedColor")
+            }
+        }else{
+            viewForAskUserForPermission(show: true)
+            mainButton.setMainButton(text: "Allow")
+            alternativeButton.setSecundaryButton(text: "Cancel")
+        }
+    }
+    
+    private func viewForAskUserForPermission(show: Bool){
+        buttonsView.isHidden = !show
+        statusView.isHidden = show
     }
 }
