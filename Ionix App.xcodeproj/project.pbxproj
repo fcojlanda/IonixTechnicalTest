@@ -26,6 +26,7 @@
 		3B95BE8F26BBA88400AD8231 /* ServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BE8E26BBA88400AD8231 /* ServicesManager.swift */; };
 		3B95BEA126BCC5E700AD8231 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA026BCC5E700AD8231 /* HomeVC.swift */; };
 		3B95BEA426BCC61300AD8231 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA326BCC61300AD8231 /* PermissionManager.swift */; };
+		3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3B95BE8E26BBA88400AD8231 /* ServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesManager.swift; sourceTree = "<group>"; };
 		3B95BEA026BCC5E700AD8231 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3B95BEA326BCC61300AD8231 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 		3B95BE7F26BB321D00AD8231 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */,
 				3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */,
 			);
 			path = Extensions;
@@ -473,6 +476,7 @@
 				3B95BEA126BCC5E700AD8231 /* HomeVC.swift in Sources */,
 				3B95BE8D26BBA87500AD8231 /* ConnectionManager.swift in Sources */,
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
+				3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
