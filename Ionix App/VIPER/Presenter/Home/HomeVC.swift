@@ -16,6 +16,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     private var arrayContent: [ContentEntity]?
     private var arrayContentBackup: [ContentEntity]?
     private var alert: UIAlertController?
+    private var loaderView : LoaderVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,9 +100,14 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     private func getMemes(){
+        if loaderView == nil {
+            loaderView = LoaderVC(nibName: "LoaderVC", bundle: nil)
+        }
+        present(loaderView!, animated: true, completion: nil)
         ServicesManager.shared.getListMemes(limit: 100, whenFinish: { (status, response, error) in
             DispatchQueue.main.async {
                 if status {
+                    self.loaderView!.dismiss(animated: true, completion: nil)
                     self.arrayContentBackup = response as? [ContentEntity]
                     self.arrayContent = self.arrayContentBackup
                     self.contentCollection.reloadData()

@@ -29,6 +29,9 @@
 		3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */; };
 		3B95BEAC26BCC70000AD8231 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEAB26BCC70000AD8231 /* MainRouter.swift */; };
 		3B95BEAE26BCDAED00AD8231 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */; };
+		3B95BEB126BCEBA500AD8231 /* LoaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEAF26BCEBA500AD8231 /* LoaderVC.swift */; };
+		3B95BEB226BCEBA500AD8231 /* LoaderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B95BEB026BCEBA500AD8231 /* LoaderVC.xib */; };
+		3B95BEB626BCF07300AD8231 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95BEB526BCF07300AD8231 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		3B95BEAB26BCC70000AD8231 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		3B95BEAF26BCEBA500AD8231 /* LoaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderVC.swift; sourceTree = "<group>"; };
+		3B95BEB026BCEBA500AD8231 /* LoaderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderVC.xib; sourceTree = "<group>"; };
+		3B95BEB526BCF07300AD8231 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 		3B95BE5F26BA512600AD8231 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BEB426BCEBB300AD8231 /* LoaderVC */,
 				3B95BE8426BB828200AD8231 /* Home */,
 				3B95BE7826BB2BAD00AD8231 /* ItemCollection */,
 				3B95BE6626BA526C00AD8231 /* Carousel */,
@@ -207,6 +214,7 @@
 		3B95BE6126BA513100AD8231 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B95BEB326BCEBA900AD8231 /* LoaderVC */,
 				3B95BE7E26BB2C1F00AD8231 /* ItemCollectoinView */,
 				3B95BE2F26BA293100AD8231 /* Main.storyboard */,
 			);
@@ -268,6 +276,7 @@
 				3B95BEA526BCC68A00AD8231 /* UIButtonExtensions.swift */,
 				3B95BE8026BB323D00AD8231 /* UICollectionViewCellExtensions.swift */,
 				3B95BEAD26BCDAED00AD8231 /* UIImageViewExtension.swift */,
+				3B95BEB526BCF07300AD8231 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,6 +337,22 @@
 				3B95BEAB26BCC70000AD8231 /* MainRouter.swift */,
 			);
 			path = MainRouter;
+			sourceTree = "<group>";
+		};
+		3B95BEB326BCEBA900AD8231 /* LoaderVC */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BEB026BCEBA500AD8231 /* LoaderVC.xib */,
+			);
+			path = LoaderVC;
+			sourceTree = "<group>";
+		};
+		3B95BEB426BCEBB300AD8231 /* LoaderVC */ = {
+			isa = PBXGroup;
+			children = (
+				3B95BEAF26BCEBA500AD8231 /* LoaderVC.swift */,
+			);
+			path = LoaderVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +460,7 @@
 			files = (
 				3B95BE3926BA293400AD8231 /* LaunchScreen.storyboard in Resources */,
 				3B95BE3626BA293400AD8231 /* Assets.xcassets in Resources */,
+				3B95BEB226BCEBA500AD8231 /* LoaderVC.xib in Resources */,
 				3B95BE7D26BB2C0F00AD8231 /* ItemContentCell.xib in Resources */,
 				3B95BE3126BA293100AD8231 /* Main.storyboard in Resources */,
 			);
@@ -477,6 +503,8 @@
 				3B95BE2A26BA293100AD8231 /* AppDelegate.swift in Sources */,
 				3B95BEAE26BCDAED00AD8231 /* UIImageViewExtension.swift in Sources */,
 				3B95BEA626BCC68A00AD8231 /* UIButtonExtensions.swift in Sources */,
+				3B95BEB626BCF07300AD8231 /* UIViewExtensions.swift in Sources */,
+				3B95BEB126BCEBA500AD8231 /* LoaderVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
